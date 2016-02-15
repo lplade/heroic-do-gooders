@@ -21,20 +21,35 @@
 </head>
 <body>
 <div class="container">
-	<h1>Difficulty Roll calculator</h1>
+	<h1 class="page-header">Difficulty Roll calculator</h1>
 	<div class="row center-block">
-		<div class="panel panel-default center-block col-xs-4">
-			<p>test</p>
-			<form>
-				Form!
-				<!--			<label for="points">Points:</label>
-							<input type="range" name="points" id="points" value="50" min="0"
-								   max="100">
-							<input type="submit" data-inline="true" value="Submit">-->
+		<div class="panel panel-default center-block col-sm-4">
+			<p class="panel-heading">Single difficulty check</p>
+			<form oninput="computeDLD()">
+				<div class="form-group">
+					<output></output>
+					<label for="charSkill">Skill</label>
+					<input type="number" class="form-control" id="charSkill" value="50">
+					<label for="difficulty">Difficulty</label>
+					<input type="number" class="form-control" id="difficulty" value="10">
+
+					<!--			<label for="points">Points:</label>
+								<input type="range" name="points" id="points" value="50" min="0"
+									   max="100">
+								<input type="submit" data-inline="true" value="Submit">-->
+				</div>
 			</form>
 		</div>
 	</div>
-</div>
 
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container">
+		<cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995 Mathew
+		Van
+		Dinter and Wesley Van Dinter
+	</div>
+</div>
 </body>
+
 </html>
