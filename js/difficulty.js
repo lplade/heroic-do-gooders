@@ -22,5 +22,10 @@ function computeDLD(){
 	//TODO update the DLD field
 	var chanceSuccess = stat / divisor; //TODO drop fraction
 
-
 }
+
+//opposed rolls
+//((roller's stat / opponent's stat)) / 0.02
+//or
+//(roller's stat / (opponent's stat * 2)) * 100
+// = roller's % chance of success
