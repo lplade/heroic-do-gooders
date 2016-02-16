@@ -15,13 +15,19 @@
 //global vars
 //var difficultyLevelDivisor;
 
-function computeDLD(){
+function computeDifficultyRoll(){
 	var stat = document.getElementById("charStat").innerHTML;
 	var level = document.getElementById("difficulty").innerHTML;
     var divisor = (level / 10) + 1;
 	//TODO update the DLD field
 	var chanceSuccess = stat / divisor; //TODO drop fraction
 
+}
+
+function computeOpposedRoll(){
+	var rStat = document.getElementById("rollerStat").innerHTML;
+	var oStat = document.getElementById("oppStat").innerHTML;
+	var chanceSuccess = rStat / oStat * 200;
 }
 
 //opposed rolls
