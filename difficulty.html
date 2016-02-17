@@ -26,7 +26,7 @@
 
 
 </head>
-<body>
+<body onload="computeDifficultyRoll()">
 <div class="container">
 	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
 	<div class="row">
@@ -35,11 +35,12 @@
 			<p class="panel-heading">Single difficulty check</p>
 			<form oninput="computeDifficultyRoll()">
 				<div class="form-group">
-					<output class="bignumber text-center">23%</output>
+					<output id="showroll" class="bignumber text-center"
+					        for="charStat difficulty"></output>
 					<div class="form-horizontal form-group-lg">
-						<label for="charSkill">Skill</label>
-						<input type="number" class="form-control" id="charSkill"
-						       value="50">
+						<label for="charStat">Skill</label>
+						<input type="number" class="form-control"
+						       id="charStat" value="50">
 						<label for="difficulty">Difficulty</label>
 						<input type="number" class="form-control"
 						       id="difficulty" value="10">

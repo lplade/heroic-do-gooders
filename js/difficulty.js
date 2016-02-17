@@ -16,18 +16,21 @@
 //var difficultyLevelDivisor;
 
 function computeDifficultyRoll(){
-	var stat = document.getElementById("charStat").innerHTML;
-	var level = document.getElementById("difficulty").innerHTML;
+	var stat = document.getElementById("charStat").value;
+	//console.log(stat);
+	var level = document.getElementById("difficulty").value;
+	//console.log(level);
     var divisor = (level / 10) + 1;
-	//TODO update the DLD field
-	var chanceSuccess = stat / divisor; //TODO drop fraction
-
+	var chanceSuccess = Math.floor(stat / divisor); //TODO drop fraction
+	//console.log(chanceSuccess);
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%";
 }
 
 function computeOpposedRoll(){
-	var rStat = document.getElementById("rollerStat").innerHTML;
-	var oStat = document.getElementById("oppStat").innerHTML;
+	var rStat = document.getElementById("rollerStat").innerHTML.value;
+	var oStat = document.getElementById("oppStat").innerHTML.value;
 	var chanceSuccess = rStat / oStat * 200;
+	return chanceSuccess + "&";
 }
 
 //opposed rolls
