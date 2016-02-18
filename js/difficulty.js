@@ -16,14 +16,19 @@
 //var difficultyLevelDivisor;
 
 function computeDifficultyRoll(){
+	var maxedOut = "";
 	var stat = document.getElementById("charStat").value;
 	//console.log(stat);
 	var level = document.getElementById("difficulty").value;
 	//console.log(level);
     var divisor = (level / 10) + 1;
-	var chanceSuccess = Math.floor(stat / divisor); //TODO drop fraction
+	var chanceSuccess = Math.floor(stat / divisor);
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+	}
 	//console.log(chanceSuccess);
-	document.getElementById("showroll").innerHTML = chanceSuccess + "%";
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
 
 function computeOpposedRoll(){
