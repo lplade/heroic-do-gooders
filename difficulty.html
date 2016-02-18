@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Difficulty Roll calculator</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+
+	<link href='https://fonts.googleapis.com/css?family=Bangers'
+	      rel='stylesheet' type='text/css'/>
+
+	<link href="css/heroic.css" rel="stylesheet" type="text/css"/>
+	<script src="js/difficulty.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
+	<div class="row">
+		<div class="center-block col-sm-4"></div> <!--spacer block-->
+		<div class="panel panel-default center-block col-sm-4">
+			<p class="panel-heading">Single difficulty check</p>
+			<form oninput="computeDifficultyRoll()">
+				<div class="form-group">
+					<output class="bignumber text-center">23%</output>
+					<div class="form-horizontal form-group-lg">
+						<label for="charSkill">Skill</label>
+						<input type="number" class="form-control" id="charSkill"
+						       value="50">
+						<label for="difficulty">Difficulty</label>
+						<input type="number" class="form-control"
+						       id="difficulty" value="10">
+					</div>
+					<!--			<label for="points">Points:</label>
+								<input type="range" name="points" id="points" value="50" min="0"
+									   max="100">
+								<input type="submit" data-inline="true" value="Submit">-->
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container small">
+		Based on <cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995
+		Mathew Van Dinter &amp; Wesley Van Dinter
+	</div>
+</div>
+</body>
+
+</html>
