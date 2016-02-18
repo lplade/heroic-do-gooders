@@ -1,3 +1,3 @@
 # Project 1:
 # heroic-do-gooders
-Web deployment branch. Appearas in GitHub Pages.
+Web deployment branch. Appears in GitHub Pages.
