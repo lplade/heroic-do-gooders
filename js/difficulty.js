@@ -31,7 +31,7 @@ function computeDifficultyRoll(){
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
 
-function computeOpposedRoll(){
+function computeVersusRoll(){
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
 	var rStat = document.getElementById("rollerStat").value;
@@ -45,8 +45,28 @@ function computeOpposedRoll(){
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
 
-//opposed rolls
+function computeComboRoll() {
+	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
+	var rStat = document.getElementById("rollerStat").value;
+	var oStat = document.getElementById("oppStat").value;
+	var level = document.getElementById("difficulty").value;
+	var divisor = (level / 10) + 1;
+	var chanceSuccess = Math.floor(((rStat / oStat) / 0.02 ) / divisor);
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
+	}
+	//console.log(chanceSuccess);
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
+
+}
+
+//versus rolls
 //((roller's stat / opponent's stat)) / 0.02
 //or
 //(roller's stat / (opponent's stat * 2)) * 100
 // = roller's % chance of success
+
+//vs roll chance / diff roll div = roller's chance of success
