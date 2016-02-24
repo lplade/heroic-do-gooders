@@ -17,6 +17,7 @@
 
 function computeDifficultyRoll(){
 	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
 	var stat = document.getElementById("charStat").value;
 	var level = document.getElementById("difficulty").value;
     var divisor = (level / 10) + 1;
@@ -24,6 +25,7 @@ function computeDifficultyRoll(){
 	if (chanceSuccess > 98) {
 		chanceSuccess = 98;
 		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
 	}
 	//console.log(chanceSuccess);
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
@@ -31,12 +33,14 @@ function computeDifficultyRoll(){
 
 function computeOpposedRoll(){
 	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
 	var rStat = document.getElementById("rollerStat").value;
 	var oStat = document.getElementById("oppStat").value;
 	var chanceSuccess = Math.floor((rStat / oStat) / 0.02 );
 	if (chanceSuccess > 98) {
 		chanceSuccess = 98;
 		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
 	}
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }

@@ -6,6 +6,9 @@
 	font-size: xx-large;
 	font-weight: bold;
 }
+.nav-tabs {
+	padding-top: 10px;
+}
 cite {
 	font-variant: small-caps;
 	font-style: normal;
