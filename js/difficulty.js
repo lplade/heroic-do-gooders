@@ -18,9 +18,7 @@
 function computeDifficultyRoll(){
 	var maxedOut = "";
 	var stat = document.getElementById("charStat").value;
-	//console.log(stat);
 	var level = document.getElementById("difficulty").value;
-	//console.log(level);
     var divisor = (level / 10) + 1;
 	var chanceSuccess = Math.floor(stat / divisor);
 	if (chanceSuccess > 98) {
@@ -32,10 +30,15 @@ function computeDifficultyRoll(){
 }
 
 function computeOpposedRoll(){
-	var rStat = document.getElementById("rollerStat").innerHTML.value;
-	var oStat = document.getElementById("oppStat").innerHTML.value;
-	var chanceSuccess = rStat / oStat * 200;
-	return chanceSuccess + "&";
+	var maxedOut = "";
+	var rStat = document.getElementById("rollerStat").value;
+	var oStat = document.getElementById("oppStat").value;
+	var chanceSuccess = Math.floor((rStat / oStat) / 0.02 );
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+	}
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
 
 //opposed rolls
