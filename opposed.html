@@ -27,26 +27,21 @@
 
 </head>
 <body onload="computeOpposedRoll()">
-<nav class="navbar navbar-default navbar-static-top">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html">HDG</a>
-		</div>
-		<div class="">
-			<ul class="nav navbar-nav">
-				<li><a href="difficulty.html">Difficulty roll</a>
-				</li>
-				<li class="active"><a href="opposed.html">Opposed roll</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
+
 <div class="container">
-	<h1 class="page-header text-center">Opposed Roll calculator</h1>
+	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
 	<div class="row">
 		<div class="center-block col-sm-4"></div> <!--spacer block-->
 		<div class="panel panel-default center-block col-sm-4">
-			<p class="panel-heading">Single difficulty check</p>
+			<div>
+				<ul class="nav nav-tabs">
+					<li>
+						<a href="difficulty.html">Difficulty roll</a>
+					</li>
+					<li class="active"><a href="opposed.html">Opposed roll</a></li>
+				</ul>
+			</div>
+
 			<form oninput="computeOpposedRoll()">
 				<div class="form-group">
 					<output id="showroll" class="bignumber text-center"
