@@ -12,7 +12,8 @@
 
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
@@ -27,6 +28,21 @@
 
 </head>
 <body onload="computeDifficultyRoll()">
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">HDG</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="difficulty.html">Difficulty roll</a>
+				</li>
+				<li><a href="opposed.html">Opposed roll</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
 <div class="container">
 	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
 	<div class="row">
@@ -37,7 +53,8 @@
 				<div class="form-group">
 					<output id="showroll" class="bignumber text-center"
 					        for="charStat difficulty"></output>
-					<label for="showroll" class="text-center">Chance to succeed</label>
+					<label for="showroll" class="text-center">Chance to
+						succeed</label>
 					<div class="form-horizontal form-group-lg">
 						<label for="charStat">Skill</label>
 						<input type="number" class="form-control"
@@ -56,12 +73,12 @@
 	</div>
 
 </div>
-<div class="navbar navbar-default navbar-fixed-bottom">
+<footer class="footer modal-footer">
 	<div class="container small">
 		Based on <cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995
 		Mathew Van Dinter &amp; Wesley Van Dinter
 	</div>
-</div>
+</footer>
 </body>
 
 </html>
