@@ -16,22 +16,57 @@
 //var difficultyLevelDivisor;
 
 function computeDifficultyRoll(){
-	var stat = document.getElementById("charStat").innerHTML;
-	var level = document.getElementById("difficulty").innerHTML;
+	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
+	var stat = document.getElementById("charStat").value;
+	var level = document.getElementById("difficulty").value;
     var divisor = (level / 10) + 1;
-	//TODO update the DLD field
-	var chanceSuccess = stat / divisor; //TODO drop fraction
+	var chanceSuccess = Math.floor(stat / divisor);
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
+	}
+	//console.log(chanceSuccess);
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
+}
+
+function computeVersusRoll(){
+	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
+	var rStat = document.getElementById("rollerStat").value;
+	var oStat = document.getElementById("oppStat").value;
+	var chanceSuccess = Math.floor((rStat / oStat) / 0.02 );
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
+	}
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
+}
+
+function computeComboRoll() {
+	var maxedOut = "";
+	document.getElementById("maxed-out").style.visibility = "hidden";
+	var rStat = document.getElementById("rollerStat").value;
+	var oStat = document.getElementById("oppStat").value;
+	var level = document.getElementById("difficulty").value;
+	var divisor = (level / 10) + 1;
+	var chanceSuccess = Math.floor(((rStat / oStat) / 0.02 ) / divisor);
+	if (chanceSuccess > 98) {
+		chanceSuccess = 98;
+		maxedOut = "*";
+		document.getElementById("maxed-out").style.visibility = "visible";
+	}
+	//console.log(chanceSuccess);
+	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 
 }
 
-function computeOpposedRoll(){
-	var rStat = document.getElementById("rollerStat").innerHTML;
-	var oStat = document.getElementById("oppStat").innerHTML;
-	var chanceSuccess = rStat / oStat * 200;
-}
-
-//opposed rolls
+//versus rolls
 //((roller's stat / opponent's stat)) / 0.02
 //or
 //(roller's stat / (opponent's stat * 2)) * 100
 // = roller's % chance of success
+
+//vs roll chance / diff roll div = roller's chance of success
