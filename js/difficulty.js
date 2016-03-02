@@ -76,15 +76,20 @@ $(function() {
 	computeDifficultyRoll();
 	$("#diffTab").on('click', function() {
 		computeDifficultyRoll();
-		$("#difficultyForm").find("input").on('change', computeDifficultyRoll());
 	});
 	$("#vsTab").on('click', function(){
 		computeVersusRoll();
-		$("#versusForm").find("input").on('change', computeVersusRoll());
 	});
 	$("#comTab").on('click', function(){
 		computeComboRoll();
-		$("#combinedForm").find("input").on('change', computeComboRoll());
 	});
 
+	//Doesnt work:
+	//$("#diffRollerStat").change(computeDifficultyRoll());
+	//$("#diffDifficulty").change(computeDifficultyRoll());
+
 });
+
+//diffRollerStat diffDifficulty
+//vsRollerStat vsOppStat
+//comRollerStat comOppStat comDifficulty
