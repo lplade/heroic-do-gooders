@@ -5,10 +5,16 @@
 .bignumber {
 	font-size: xx-large;
 	font-weight: bold;
+
 }
 .nav-tabs {
 	padding-top: 10px;
 }
+#maxed-out {
+	padding-top: 10px;
+	font-style: oblique;
+}
+
 cite {
 	font-variant: small-caps;
 	font-style: normal;
