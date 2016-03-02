@@ -9,10 +9,11 @@
 //500 = very hard
 
 function computeDifficultyRoll(){
+	console.log("Difficulty roll");
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
-	var stat = document.getElementById("charStat").value;
-	var level = document.getElementById("difficulty").value;
+	var stat = document.getElementById("diffRollerStat").value;
+	var level = document.getElementById("diffDifficulty").value;
     var divisor = (level / 10) + 1;
 	var chanceSuccess = Math.floor(stat / divisor);
 	if (chanceSuccess > 98) {
@@ -32,10 +33,11 @@ function computeDifficultyRoll(){
 // = roller's % chance of success
 
 function computeVersusRoll(){
+	console.log("versus roll");
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
-	var rStat = document.getElementById("rollerStat").value;
-	var oStat = document.getElementById("oppStat").value;
+	var rStat = document.getElementById("vsRollerStat").value;
+	var oStat = document.getElementById("vsOppStat").value;
 	var chanceSuccess = Math.floor((rStat / oStat) / 0.02 );
 	if (chanceSuccess > 98) {
 		chanceSuccess = 98;
@@ -49,11 +51,12 @@ function computeVersusRoll(){
 //vs roll chance / diff roll div = roller's chance of success
 
 function computeComboRoll() {
+	console.log("combo roll");
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
-	var rStat = document.getElementById("rollerStat").value;
-	var oStat = document.getElementById("oppStat").value;
-	var level = document.getElementById("difficulty").value;
+	var rStat = document.getElementById("comRollerStat").value;
+	var oStat = document.getElementById("comOppStat").value;
+	var level = document.getElementById("comDifficulty").value;
 	var divisor = (level / 10) + 1;
 	var chanceSuccess = Math.floor(((rStat / oStat) / 0.02 ) / divisor);
 	if (chanceSuccess > 98) {
@@ -65,3 +68,23 @@ function computeComboRoll() {
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 
 }
+
+// Use DOM level 2 eventlisteners instead of deprecated HTML event handlers
+// Use jQuery to make this sane
+
+$(function() {
+	computeDifficultyRoll();
+	$("#diffTab").on('click', function() {
+		computeDifficultyRoll();
+		$("#difficultyForm").find("input").on('change', computeDifficultyRoll());
+	});
+	$("#vsTab").on('click', function(){
+		computeVersusRoll();
+		$("#versusForm").find("input").on('change', computeVersusRoll());
+	});
+	$("#comTab").on('click', function(){
+		computeComboRoll();
+		$("#combinedForm").find("input").on('change', computeComboRoll());
+	});
+
+});

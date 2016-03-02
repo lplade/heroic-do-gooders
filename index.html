@@ -27,10 +27,10 @@
 		<div class="col-sm-6">
 			<ul class="nav nav-tabs">
 				<li class="active">
-					<a href="difficulty.html">Difficulty</a>
+					<a data-toggle="tab" id="diffTab" href="#difficultyForm">Difficulty</a>
 				</li>
-				<li><a href="versus.html">Versus</a></li>
-				<li><a href="combined.html">Combined</a></li>
+				<li><a data-toggle="tab" id="vsTab" href="#versusForm">Versus</a></li>
+				<li><a data-toggle="tab" id="comTab" href="#combinedForm">Combined</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-3"></div><!--spacer column -->
@@ -40,30 +40,79 @@
 		<div class="col-sm-6">
 			<div class="form-group-lg text-center">
 				<output id="showroll" class="bignumber"
-				        for="rollerStat oppStat difficulty"></output>
+				        for="diffRollerStat diffDifficulty
+				             vsRollerStat vsOppStat
+				             comRollerStat comOppStat comDifficulty" form="masterForm"></output>
 				<label for="showroll" class="text-center">Chance to
 					succeed</label>
 			</div>
 		</div>
 		<div class="col-sm-3"></div>
-
 	</div>
 	<div class="row">
 		<div class="col-sm-3"></div>
-		<div class="col-sm-2 form-horizontal form-group-lg">
-			<input type="number" class="form-control"
-			       id="rollerStat" value="75" min="1">
-			<label class="control-label" for="rollerStat">Your skill</label>
-		</div>
-		<div class="col-sm-2 form-horizontal form-group-lg">
-			<input type="number" class="form-control" id="oppStat" value="75" min="1">
-			<label class="control-label" for="oppStat">Their skill</label>
-		</div>
-		<div class="col-sm-2 form-horizontal form-group-lg">
-			<input type="number" class="form-control"
-			       id="difficulty" value="10" min="1" max="500">
-			<label class="control-label" for="difficulty">Difficulty</label>
-		</div>
+		<!-- tab content -->
+		<form class="tab-content" id="masterForm">
+			<div id="difficultyForm" class="tab-pane fade in active">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="diffRollerStat" value="75" min="1">
+					<label class="control-label" for="diffRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control" id="diffOppDis"
+					       value="75" min="1" disabled>
+					<label class="control-label text-muted" for="diffOppDis">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="diffDifficulty" value="10" min="1" max="500">
+					<label class="control-label"
+					       for="diffDifficulty">Difficulty</label>
+				</div>
+			</div>
+			<div id="versusForm" class="tab-pane fade">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="vsRollerStat" value="75" min="1">
+					<label class="control-label" for="vsRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg disabled">
+					<input type="number" class="form-control" id="vsOppStat"
+					       value="75" min="1">
+					<label class="control-label" for="vsOppStat">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="vsDiffDis" value="10" min="1" max="500" disabled>
+					<label class="control-label text-muted" for="vsDiffDis">Difficulty</label>
+				</div>
+			</div>
+			<div id="combinedForm" class="tab-pane fade">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="comRollerStat" value="75" min="1">
+					<label class="control-label" for="comRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg disabled">
+					<input type="number" class="form-control" id="comOppStat"
+					       value="75" min="1">
+					<label class="control-label" for="comOppStat">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="comDifficulty" value="10" min="1" max="500">
+					<label class="control-label"
+					       for="comDifficulty">Difficulty</label>
+				</div>
+			</div>
+		</form>
 		<div class="col-sm-3"></div>
 	</div>
 	<div class="row">
@@ -74,6 +123,7 @@
 		<div class="col-sm-3"></div>
 	</div>
 </div>
+
 <footer class="footer panel-footer navbar-fixed-bottom">
 	<div class="container small">
 		Based on <cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995
@@ -90,11 +140,7 @@
 <!-- local scripts to do the math of the calculations -->
 <script src="js/difficulty.js"></script>
 
-<script>
 
-	// Use DOM level 2 eventlisteners instead of deprecated HTML event handlers
-
-</script>
 </body>
 
 </html>
