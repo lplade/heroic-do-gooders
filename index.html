@@ -22,16 +22,22 @@
 	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
 	<div class="row">
 		<div class="col-md-2"><!--spacer column--></div>
-		<div class="col-md-4">
-			<div class="form-group-lg text-center">
-				<output id="showroll" class="bignumber"
-				        for="diffRollerStat diffDifficulty
+		<div class="col-md-4 ">
+			<div class="panel panel-default panel-primary">
+				<div class="form-group-lg text-center panel-body">
+					<output id="showroll"
+					        class="bignumber"
+					        for="diffRollerStat diffDifficulty
 				             vsRollerStat vsOppStat
 				             comRollerStat comOppStat comDifficulty"
-				        form="masterForm">50%
-				</output>
-				<label for="showroll" class="text-center bottom-align-text">Chance to
-					succeed</label>
+					        form="masterForm">50%
+					</output>
+					<label for="showroll"
+					       class="text-center">Chance to succeed</label>
+				</div>
+				<div class="panel-footer clearfix">
+					<p id="maxed-out">* Always a 2% chance of failure</p>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -43,13 +49,17 @@
 							<a data-toggle="tab" id="diffTab"
 							   href="#difficultyForm">Difficulty</a>
 						</li>
-						<li><a data-toggle="tab" id="vsTab"
-						       href="#versusForm">Versus</a></li>
-						<li><a data-toggle="tab" id="comTab"
-						       href="#combinedForm">Combined</a>
+						<li>
+							<a data-toggle="tab" id="vsTab"
+							   href="#versusForm">Versus</a>
+						</li>
+						<li>
+							<a data-toggle="tab" id="comTab"
+							   href="#combinedForm">Combined</a>
 						</li>
 					</ul>
 				</div>
+
 				<div class="col-xs-12">
 					<!-- tab content -->
 					<form class="tab-content" id="masterForm">
@@ -129,17 +139,14 @@
 		</div>
 		<div class="col-md-2"></div>
 	</div>
-	<div class="row">
 
-	</div>
 
 </div>
 
 <footer class="footer panel-footer navbar-fixed-bottom">
 	<div class="container small">
-		Based on <cite>Heroic Do-Gooders &amp; Dastardly
-		Deed-Doers</cite> &copy;1995
-		Mathew Van Dinter &amp; Wesley Van Dinter
+		Based on <cite>Heroic Do-Gooders &amp; Dastardly Deed-Doers</cite>
+		&copy;1995 Mathew Van Dinter &amp; Wesley Van Dinter
 	</div>
 </footer>
 
