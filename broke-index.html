@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Difficulty Roll calculator</title>
+
+	<!-- Boostrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<!-- comic book style font -->
+	<link href='https://fonts.googleapis.com/css?family=Bangers'
+	      rel='stylesheet' type='text/css'/>
+
+	<!-- local style sheet -->
+	<link href="css/heroic.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+	<h1 class="page-header text-center">Difficulty Roll calculator</h1>
+	<div class="row">
+		<div class="col-sm-3"></div><!-- spacer column -->
+		<div class="col-sm-6">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" id="diffTab" href="#difficultyForm">Difficulty</a>
+				</li>
+				<li><a data-toggle="tab" id="vsTab" href="#versusForm">Versus</a></li>
+				<li><a data-toggle="tab" id="comTab" href="#combinedForm">Combined</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-3"></div><!--spacer column -->
+	</div>
+	<div class="row">
+		<div class="col-sm-3"></div><!-- spacer column -->
+		<div class="col-sm-6">
+			<div class="form-group-lg text-center">
+				<output id="showroll" class="bignumber"
+				        for="diffRollerStat diffDifficulty
+				             vsRollerStat vsOppStat
+				             comRollerStat comOppStat comDifficulty" form="masterForm"></output>
+				<label for="showroll" class="text-center">Chance to
+					succeed</label>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<!-- tab content -->
+		<form class="tab-content" id="masterForm">
+			<div id="difficultyForm" class="tab-pane fade in active">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="diffRollerStat" value="75" min="1">
+					<label class="control-label" for="diffRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control" id="diffOppDis"
+					       value="75" min="1" disabled>
+					<label class="control-label text-muted" for="diffOppDis">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="diffDifficulty" value="10" min="1" max="500">
+					<label class="control-label"
+					       for="diffDifficulty">Difficulty</label>
+				</div>
+			</div>
+			<div id="versusForm" class="tab-pane fade">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="vsRollerStat" value="75" min="1">
+					<label class="control-label" for="vsRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg disabled">
+					<input type="number" class="form-control" id="vsOppStat"
+					       value="75" min="1">
+					<label class="control-label" for="vsOppStat">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="vsDiffDis" value="10" min="1" max="500" disabled>
+					<label class="control-label text-muted" for="vsDiffDis">Difficulty</label>
+				</div>
+			</div>
+			<div id="combinedForm" class="tab-pane fade">
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="comRollerStat" value="75" min="1">
+					<label class="control-label" for="comRollerStat">Your
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg disabled">
+					<input type="number" class="form-control" id="comOppStat"
+					       value="75" min="1">
+					<label class="control-label" for="comOppStat">Their
+						skill</label>
+				</div>
+				<div class="col-sm-2 form-horizontal form-group-lg">
+					<input type="number" class="form-control"
+					       id="comDifficulty" value="10" min="1" max="500">
+					<label class="control-label"
+					       for="comDifficulty">Difficulty</label>
+				</div>
+			</div>
+		</form>
+		<div class="col-sm-3"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6 text-center">
+			<p id="maxed-out">* Always a 2% chance of failure</p>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</div>
+
+<footer class="footer panel-footer navbar-fixed-bottom">
+	<div class="container small">
+		Based on <cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995
+		Mathew Van Dinter &amp; Wesley Van Dinter
+	</div>
+</footer>
+<!-- apparently, loading scripts after HTML yields best performance -->
+<!-- jquery version recommended by Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- complete set of Bootstrap plugins -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- local scripts to do the math of the calculations -->
+<script src="js/difficulty.js"></script>
+
+
+</body>
+
+</html>
