@@ -27,7 +27,7 @@
 
 
 </head>
-<body onload="computeDifficultyRoll()">
+<body>
 
 <div class="container">
 
@@ -44,7 +44,7 @@
 					<li><a href="combined.html">Combined</a></li>
 				</ul>
 			</div>
-			<form oninput="computeDifficultyRoll()">
+			<form>
 				<div class="form-group">
 					<output id="showroll" class="bignumber text-center"
 					        for="charStat difficulty"></output>
@@ -69,10 +69,15 @@
 </div>
 <footer class="footer panel-footer navbar-fixed-bottom">
 	<div class="container small">
-		Based on <cite>Heroic Do-Gooders & Dastardly Deed-Doers</cite> &copy;1995
+		Based on <cite>Heroic Do-Gooders &amp; Dastardly Deed-Doers</cite> &copy;1995
 		Mathew Van Dinter &amp; Wesley Van Dinter
 	</div>
 </footer>
+<script>
+	// Use DOM listener instead of deprecated HTML elements
+	$(document).ready(computeDifficultyRoll());
+	$("input").change(computeDifficultyRoll());
+</script>
 </body>
 
 </html>

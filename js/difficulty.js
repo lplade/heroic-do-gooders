@@ -8,13 +8,6 @@
 //10 = pretty easy
 //500 = very hard
 
-//user settable numbers
-//var charStat;
-//var difficultyLevel;
-
-//global vars
-//var difficultyLevelDivisor;
-
 function computeDifficultyRoll(){
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
@@ -30,7 +23,11 @@ function computeDifficultyRoll(){
 	//console.log(chanceSuccess);
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
-
+//versus rolls
+//((roller's stat / opponent's stat)) / 0.02
+//or
+//(roller's stat / (opponent's stat * 2)) * 100
+// = roller's % chance of success
 function computeVersusRoll(){
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
@@ -45,6 +42,7 @@ function computeVersusRoll(){
 	document.getElementById("showroll").innerHTML = chanceSuccess + "%" + maxedOut;
 }
 
+//vs roll chance / diff roll div = roller's chance of success
 function computeComboRoll() {
 	var maxedOut = "";
 	document.getElementById("maxed-out").style.visibility = "hidden";
@@ -63,10 +61,5 @@ function computeComboRoll() {
 
 }
 
-//versus rolls
-//((roller's stat / opponent's stat)) / 0.02
-//or
-//(roller's stat / (opponent's stat * 2)) * 100
-// = roller's % chance of success
 
-//vs roll chance / diff roll div = roller's chance of success
+
