@@ -69,14 +69,22 @@
 </div>
 <footer class="footer panel-footer navbar-fixed-bottom">
 	<div class="container small">
-		Based on <cite>Heroic Do-Gooders &amp; Dastardly Deed-Doers</cite> &copy;1995
+		Based on <cite>Heroic Do-Gooders &amp; Dastardly
+		Deed-Doers</cite> &copy;1995
 		Mathew Van Dinter &amp; Wesley Van Dinter
 	</div>
 </footer>
 <script>
 	// Use DOM listener instead of deprecated HTML elements
-	$(document).ready(computeDifficultyRoll());
-	$("input").change(computeDifficultyRoll());
+	$(document).ready(function () {
+		computeDifficultyRoll(); //initial calculation on load
+
+		//eventlistener had to be set up after the document event or it does not work
+		$("input").change(function () {
+			console.log("something changed...");
+			computeDifficultyRoll();
+		});
+	});
 </script>
 </body>
 
