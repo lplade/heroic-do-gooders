@@ -2,4 +2,8 @@
 # heroic-do-gooders
 Tools for Heroic Do-Gooders &amp; Dastardly Deed-Doers RPG
 
-Stalled out development branch is currently "single-page-form""
+Initial release as presented in class
+
+Shortcomings:
+* Uses old-style html on___ listeners instead of modern DOM listeners
+* Split among three separate HTML files
