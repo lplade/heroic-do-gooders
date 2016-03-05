@@ -11,6 +11,7 @@
 .control-label {
 	padding-bottom: 10px;
 }
+
 #masterForm {
 	padding-top: 15px;
 }
@@ -23,5 +24,6 @@ cite {
 }
 body {
 	/*Pad to prevent footer overlap*/
-	padding-bottom: 70px;
+	/*Don't need without fixed footer */
+	/* padding-bottom: 70px;*/
 }
