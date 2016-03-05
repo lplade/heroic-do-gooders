@@ -77,13 +77,10 @@ $(document).ready(function () {
 		console.log(targetID);
 		switch (targetID) {
 			case 'diffTab':
-				computeDifficultyRoll();
 				break;
 			case 'vsTab':
-				computeVersusRoll();
 				break;
 			case 'comTab':
-				computeComboRoll();
 				break;
 		}
 	});
@@ -91,7 +88,6 @@ $(document).ready(function () {
 	//eventlistener had to be set up after the document event or it does not work
 	//listen to id of each form pane
 	$("#difficultyForm").change(function () {
-		console.log("Difficulty changed...");
 		computeDifficultyRoll();
 	});
 	$("#versusForm").change(function () {
