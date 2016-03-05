@@ -1,7 +1,6 @@
 .page-header {
 	font-family: 'Bangers', cursive;
 }
-
 .bignumber {
 	font-size: xx-large;
 	font-weight: bold;
@@ -9,11 +8,19 @@
 .nav-tabs {
 	padding-top: 10px;
 }
+.control-label {
+	padding-bottom: 10px;
+}
+#masterForm {
+	padding-top: 15px;
+}
+#outputzone {
+
+}
 cite {
 	font-variant: small-caps;
 	font-style: normal;
 }
-
 body {
 	/*Pad to prevent footer overlap*/
 	padding-bottom: 70px;
