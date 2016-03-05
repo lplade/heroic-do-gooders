@@ -64,5 +64,27 @@ function computeComboRoll() {
 
 }
 
+// Use DOM listener instead of deprecated HTML elements
+$(document).ready(function () {
+	computeDifficultyRoll(); //initial calculation on load
 
+	//similarly initialize calculation after changing tabs
+	$('a #diffTab').click(computeDifficultyRoll());
+	$('a #vsTab').click(computeVersusRoll());
+	$('a #comTab').click(computeComboRoll());
+
+
+	//eventlistener had to be set up after the document event or it does not work
+	//listen to id of each form pane
+	$("#difficultyForm").change(function () {
+		console.log("Difficulty changed...");
+		computeDifficultyRoll();
+	});
+	$("#versusForm").change(function() {
+		computeVersusRoll();
+	});
+	$("#combinedForm").change(function() {
+		computeComboRoll();
+	});
+});
 

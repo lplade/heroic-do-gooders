@@ -161,18 +161,5 @@
 <!-- local scripts to do the math of the calculations -->
 <script src="js/difficulty.js"></script>
 
-<script>
-	// Use DOM listener instead of deprecated HTML elements
-	$(document).ready(function () {
-		computeDifficultyRoll(); //initial calculation on load
-
-		//eventlistener had to be set up after the document event or it does not work
-		$("input").change(function () {
-			console.log("something changed...");
-			computeDifficultyRoll();
-		});
-	});
-</script>
-
 </body>
 </html>
