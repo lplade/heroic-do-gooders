@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+Heroic-Do-Gooders calculator
+Copyright (C) 2016 l.p.lade
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +30,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Bangers'
 	      rel='stylesheet' type='text/css'/>
 
+	<link href="css/sticky-footer.css" rel="stylesheet" type="text/css"/>
 	<link href="css/heroic.css" rel="stylesheet" type="text/css"/>
 
 </head>
@@ -25,7 +43,8 @@
 		<div class="col-md-4 ">
 			<div class="panel panel-default panel-primary">
 				<div class="panel-heading clearfix">Result</div>
-				<div class="form-group-lg text-center panel-body" id="outputzone">
+				<div class="form-group-lg text-center panel-body"
+				     id="outputzone">
 					<output id="showroll"
 					        class="bignumber"
 					        for="diffRollerStat diffDifficulty
@@ -37,7 +56,8 @@
 					       class="text-center">Chance to succeed</label>
 				</div>
 				<div>
-					<p id="maxed-out" class="label label-default label-info">* Always a 2% chance of failure</p>
+					<p id="maxed-out" class="label label-default label-info">*
+						Always a 2% chance of failure</p>
 				</div>
 			</div>
 		</div>
@@ -74,12 +94,12 @@
 									skill</label>
 							</div>
 							<div class="col-lg-4 col-md-12 col-sm-4 col-xs-12 form-horizontal form-group-lg">
-								<input type="number" class="form-control"
+								<input type="text" class="form-control"
 								       id="diffOppDis"
-								       value="100" min="1" disabled>
+								       disabled="disabled">
 								<label class="control-label text-muted"
-								       for="diffOppDis">Their
-									skill</label>
+								       for="diffOppDis" disabled="disabled">
+									Their skill</label>
 							</div>
 							<div class="col-lg-4 col-md-12 col-sm-4 col-xs-12 form-horizontal form-group-lg">
 								<input type="number" class="form-control"
@@ -104,10 +124,10 @@
 									skill</label>
 							</div>
 							<div class="col-lg-4 col-md-12 col-sm-4 col-xs-12 form-horizontal form-group-lg">
-								<input type="number" class="form-control"
-								       id="vsDiffDis" value="10" min="1"
-								       max="500" disabled>
-								<label class="control-label text-muted"
+								<input type="text" class="form-control"
+								       id="vsDiffDis"
+								       disabled="disabled">
+								<label class="control-label text-muted" disabled="disabled"
 								       for="vsDiffDis">Difficulty</label>
 							</div>
 						</div>
@@ -141,13 +161,15 @@
 		<div class="col-md-2"></div>
 	</div>
 
+	<!-- TODO include a panel that offers descriptors of what the numbers mean. Only show it on wide screens.-->
 
 </div>
 
-<footer class="footer panel-footer navbar-fixed-bottom">
+<footer class="footer">
 	<div class="container small">
-		Based on <cite>Heroic Do-Gooders &amp; Dastardly Deed-Doers</cite>
-		&copy;1995 Mathew Van Dinter &amp; Wesley Van Dinter
+		<div class="row text-center">
+			<a href="about.html" rel="jslicense">About</a>
+		</div>
 	</div>
 </footer>
 
