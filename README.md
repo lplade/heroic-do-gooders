@@ -3,4 +3,5 @@
 
 Web deployment branch. Appears in GitHub Pages.
 
-Now updated to v0.2
+Now updated to v0.3
+
